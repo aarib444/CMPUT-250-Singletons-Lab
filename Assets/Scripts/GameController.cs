@@ -70,6 +70,7 @@ public class GameController : MonoBehaviour
             LivesDisplay.text = LivesText+_lives;
 
             //Play sound for losing ball?
+            AudioController.Instance.PlayBallLost();
 
             if(_lives==0){
                 LoseDisplay.text = LoseText;
@@ -86,6 +87,7 @@ public class GameController : MonoBehaviour
         ScoreDisplay.text = ScoreText+_score;
 
         //Play sound for breaking block?
+        AudioController.Instance.PlayBlockLost();
 
         if (_totalBlocks==0){
             WinDisplay.text = WinText;

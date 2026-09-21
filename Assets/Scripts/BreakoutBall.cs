@@ -40,6 +40,7 @@ public class BreakoutBall : MonoBehaviour
         if(Mathf.Abs(transform.position.x) > GameController.Instance.XBound){
             //Hit left or right of screen
             BounceHitVertical();
+            AudioController.Instance.PlayBounce();
 
             //reset location
             Vector3 location = transform.position;
@@ -55,6 +56,7 @@ public class BreakoutBall : MonoBehaviour
             //Hit top of screen
             BounceHitHorizontal();
             BounceHitVertical();
+            AudioController.Instance.PlayBounce();
 
             //reset location
             Vector3 location = transform.position;
@@ -66,6 +68,7 @@ public class BreakoutBall : MonoBehaviour
             BallReset();
 
             //Lose a life?
+            GameController.Instance.OnLoseBall();
         }
 
     }
@@ -74,6 +77,7 @@ public class BreakoutBall : MonoBehaviour
         if(other.tag=="Player"){
             BounceHitHorizontal();
             BreakoutPaddle paddle = other.transform.gameObject.GetComponent<BreakoutPaddle>();
+            AudioController.Instance.PlayBounce();
 
             _velocity.x+=paddle.Velocity*Speed;
         }
@@ -83,6 +87,7 @@ public class BreakoutBall : MonoBehaviour
             BounceHitHorizontal();
 
             //Update score?
+            GameController.Instance.OnBreakBlock();
         }
         
     }

@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Admin
   m_TagString: MainCamera
@@ -162,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9cdde11430cd463e845c939029f4b3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Block: {fileID: 0}
+  Block: {fileID: 4881481640947440600, guid: 7349dcbcd8ad94da28bef43766818b12, type: 3}
   Spawn_Block_Pos: {x: -3, y: 3.75, z: 0}
   Block_X_Dist: 1.5
   Block_Y_Dist: 0.5
@@ -178,13 +179,13 @@ MonoBehaviour:
   YBound: 4.5
   MaxLives: 3
   BlockScoreAmount: 100
-  WinDisplay: {fileID: 0}
+  WinDisplay: {fileID: 1201460189}
   WinText: Win!
-  LoseDisplay: {fileID: 0}
+  LoseDisplay: {fileID: 2113298225}
   LoseText: Lose!
-  LivesDisplay: {fileID: 0}
+  LivesDisplay: {fileID: 1556520428}
   LivesText: 'Lives: '
-  ScoreDisplay: {fileID: 0}
+  ScoreDisplay: {fileID: 1489531115}
   ScoreText: 'Score: '
 --- !u!20 &519420031
 Camera:
@@ -348,6 +349,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd9dfebb82cdb1a48aea52ed785b7752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 519420033}
+  ballLost: {fileID: 8300000, guid: 335691a6a77134a8088b62c8864c4b93, type: 3}
+  blockLost: {fileID: 8300000, guid: 52b62b4b15d8543b19de542da889fc2d, type: 3}
+  bounce: {fileID: 8300000, guid: d9fabd0d2394d429ea557b06dbd9a41b, type: 3}
 --- !u!1 &602826856
 GameObject:
   m_ObjectHideFlags: 0
