@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class GameController : MonoBehaviour
 {
@@ -48,6 +49,11 @@ public class GameController : MonoBehaviour
                 _totalBlocks++;
                 Vector3 blockPos = new Vector3(x, Spawn_Block_Pos.y+y*Block_Y_Dist*-1);
                 GameObject blockClone = GameObject.Instantiate(Block);
+                Block blockScript = blockClone.AddComponent<Block>();
+                BlockCollisionObserver blockCollisionObserverScript = blockClone.AddComponent<BlockCollisionObserver>();
+                Rigidbody rb = blockClone.AddComponent<Rigidbody>();
+                rb.isKinematic = true; 
+                rb.useGravity = false;
                 blockClone.transform.position = blockPos;
 
                 //Set colour
